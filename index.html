@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EvoVision — Elegant Web Studio</title>
+    <meta name="description" content="EvoVision — Elegant. Functional. Affordable. We design and develop beautiful responsive websites." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+  </head>
+  <body class="antialiased text-gray-800 bg-white font-body">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed w-full z-40 bg-white/60 backdrop-blur-sm shadow-sm">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="#hero" class="text-2xl font-serifHead text-evoblue tracking-wide">EvoVision</a>
+        <nav class="hidden md:flex gap-6 items-center text-sm">
+          <a href="#work" class="hover:text-evoblue">Work</a>
+          <a href="#services" class="hover:text-evoblue">Services</a>
+          <a href="#about" class="hover:text-evoblue">About</a>
+          <a href="#contact" class="px-4 py-2 rounded-md border border-evoblue text-evoblue hover:bg-evoblue hover:text-white transition">Contact</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="menuBtn" aria-label="Open menu" class="p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div id="mobileMenu" class="hidden fixed inset-0 bg-black/40 z-30">
+      <div class="bg-white w-64 h-full p-6">
+        <div class="flex justify-between items-center mb-6">
+          <div class="text-xl font-serifHead text-evoblue">EvoVision</div>
+          <button id="closeMenu" aria-label="Close menu">✕</button>
+        </div>
+        <nav class="flex flex-col gap-4">
+          <a href="#work" class="py-2 border-b">Work</a>
+          <a href="#services" class="py-2 border-b">Services</a>
+          <a href="#about" class="py-2 border-b">About</a>
+          <a href="#contact" class="py-2 border-b">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="pt-24">
+      <!-- HERO -->
+      <section id="hero" class="min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-6/12 flex flex-col justify-center" data-aos="fade-up">
+            <p class="text-sm uppercase tracking-widest text-evoblue font-semibold">EvoVision</p>
+            <h1 class="mt-4 font-serifHead text-4xl md:text-5xl leading-tight">Elegant. Functional. Affordable.</h1>
+            <p class="mt-4 text-gray-600 max-w-xl">We design and develop beautiful, responsive websites crafted to reflect your brand and convert visitors into customers. Clean aesthetics, solid performance, and development that covers frontend & backend.</p>
+            <div class="mt-8 flex gap-4">
+              <a href="#work" class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-evoblue text-white shadow hover:shadow-lg transition">View Our Work</a>
+              <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-evoblue text-evoblue hover:bg-evoblue hover:text-white transition">Start a Project</a>
+            </div>
+            <div class="mt-8 flex gap-6 text-sm text-gray-500">
+              <div><span class="font-semibold text-gray-800">Live</span> Projects</div>
+              <div><span class="font-semibold text-gray-800">Full-stack</span> Development</div>
+              <div><span class="font-semibold text-gray-800">Budget-friendly</span> Packages</div>
+            </div>
+          </div>
+
+          <div class="lg:w-6/12 flex items-center justify-center" data-aos="fade-left">
+            <div class="w-full max-w-md glass rounded-2xl p-6 shadow-lg">
+              <div class="relative overflow-hidden rounded-xl">
+                <!-- Hero mockup / gradient -->
+                <div class="h-64 md:h-80 bg-gradient-to-br from-evolight to-white flex items-center justify-center">
+                  <div class="text-center">
+                    <h3 class="text-lg font-semibold text-evoblue">Studio Showcase</h3>
+                    <p class="mt-2 text-sm text-gray-600">Beautiful websites, tailored to your brand.</p>
+                  </div>
+                </div>
+                <div class="p-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-sm text-gray-500">Specialty</p>
+                      <p class="font-medium">Responsive & Classy Designs</p>
+                    </div>
+                    <div class="text-right">
+                      <p class="text-sm text-gray-500">Turnaround</p>
+                      <p class="font-medium">Fast & Reliable</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+<!-- ====== Work Section ====== -->
+<section id="work" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-3xl font-serifHead">Selected Projects</h2>
+      <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+        A small selection of live projects demonstrating design sensibility and full-stack execution.
+      </p>
+    </div>
+
+  <!-- Swiper Container -->
+<div class="swiper relative" data-aos="fade-up" data-aos-delay="50">
+  <div class="swiper-wrapper">
+
+        <!-- Project 1 -->
+        <div class="swiper-slide flex justify-center">
+          <article class="project-card rounded-2xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition w-full max-w-sm">
+            <div class="h-64 overflow-hidden">
+              <img src="images/jazacakes-header.jpg" alt="Jaza Cakes" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="text-xl font-semibold">Jaza Cakes — Premium Homemade Cakes</h3>
+              <p class="text-gray-600 text-sm">Responsive website for a home bakery with menus, testimonials, contact form & WhatsApp orders.</p>
+              <div class="mt-4 flex gap-2">
+                <a class="text-xs px-4 py-2 rounded-md bg-evoblue text-white font-medium hover:bg-evopurple shadow-md hover:shadow-lg transition"
+                   href="https://jazacakes.in" target="_blank">View Live</a>
+                <a class="text-xs px-3 py-2 rounded-md border border-evoblue text-evoblue bg-white font-medium hover:bg-evoblue hover:text-white shadow-md hover:shadow-lg transition cursor-pointer details-btn"
+                   onclick="openModal('jazacakesModal')">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="swiper-slide flex justify-center">
+          <article class="project-card rounded-2xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition w-full max-w-sm">
+            <div class="h-64 overflow-hidden">
+              <img src="images/niimmigration-header.jpg" alt="Niimmigration" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="text-xl font-semibold">Niimmigration — Visa Consultancy</h3>
+              <p class="text-gray-600 text-sm">Responsive site for a visa consultancy with service pages & contact form.</p>
+              <div class="mt-4 flex gap-2">
+                <a class="text-xs px-4 py-2 rounded-md bg-evoblue text-white font-medium hover:bg-evopurple shadow-md hover:shadow-lg transition"
+                   href="https://niivisaimmigration.com/" target="_blank">View Live</a>
+                <a class="text-xs px-3 py-2 rounded-md border border-evoblue text-evoblue bg-white font-medium hover:bg-evoblue hover:text-white shadow-md hover:shadow-lg transition cursor-pointer details-btn"
+                   onclick="openModal('niimmigrationModal')">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="swiper-slide flex justify-center">
+          <article class="project-card rounded-2xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition w-full max-w-sm">
+            <div class="h-64 overflow-hidden">
+              <img src="images/amt-tea.png" alt="AMT Tea Powder Company" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 flex flex-col gap-2">
+              <h3 class="text-xl font-semibold">AMT Tea Powder Company</h3>
+              <p class="text-gray-600 text-sm">Product-focused website showcasing tea range and simple contact/purchase forms.</p>
+              <div class="mt-4 flex gap-2">
+                <a class="text-xs px-4 py-2 rounded-md bg-evoblue text-white font-medium hover:bg-evopurple shadow-md hover:shadow-lg transition"
+                   href="https://amtind.com/" target="_blank">View Live</a>
+                <a class="text-xs px-3 py-2 rounded-md border border-evoblue text-evoblue bg-white font-medium hover:bg-evoblue hover:text-white shadow-md hover:shadow-lg transition cursor-pointer details-btn"
+                   onclick="openModal('amtTeaModal')">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+  <!-- Pagination -->
+  <div class="swiper-pagination absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex space-x-2"></div>
+
+  <!-- Navigation Arrows -->
+  <div class="swiper-button-next w-10 h-10 bg-evoblue text-white rounded-full flex items-center justify-center shadow-lg hover:bg-evopurple transition absolute top-1/2 -translate-y-1/2 right-2 z-10 cursor-pointer">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+  <div class="swiper-button-prev w-10 h-10 bg-evoblue text-white rounded-full flex items-center justify-center shadow-lg hover:bg-evopurple transition absolute top-1/2 -translate-y-1/2 left-2 z-10 cursor-pointer">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </div>
+</div>
+
+    <div class="mt-10 text-center" data-aos="fade-up">
+      <p class="text-sm text-gray-600">Want your website to be featured here? <a href="#contact" class="text-evoblue font-medium">Let’s talk.</a></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Jaza Cakes Modal -->
+<div id="jazacakesModal" class="project-modal fixed inset-0 hidden justify-center items-start z-50 overflow-auto px-4 py-8 pt-20">
+  <div class="modal-content bg-white rounded-3xl w-full max-w-3xl p-8 relative shadow-2xl">
+    
+    <!-- Close Button -->
+    <button onclick="closeModal('jazacakesModal')" class="absolute top-4 right-6 text-gray-400 hover:text-evoblue text-3xl font-bold">&times;</button>
+
+    <!-- Header -->
+    <div class="text-center mb-6">
+      <h2 class="text-3xl font-semibold text-evoblue">Jaza Cakes — Premium Homemade Cakes</h2>
+      <p class="mt-2 text-gray-600">A responsive website for a home bakery delivering premium cakes with a user-friendly experience.</p>
+    </div>
+
+    <!-- Project Image -->
+    <div class="mb-6 rounded-xl overflow-hidden shadow-md">
+      <img src="images/jazacakes-header.jpg" alt="Jaza Cakes" class="w-full h-64 object-cover">
+    </div>
+
+    <!-- Overview Section -->
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Overview</h3>
+      <p class="text-gray-700 leading-relaxed">
+        Jaza Cakes is a premium home bakery website showcasing custom cakes, menus, and event collaborations. Users can explore products, read testimonials, and place orders easily via WhatsApp.
+      </p>
+    </section>
+
+    <!-- Key Features -->
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Key Features</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>🎂 Swipeable product menu with smooth animations</li>
+        <li>💬 WhatsApp order integration for quick purchases</li>
+        <li>🌟 Customer testimonials carousel</li>
+        <li>📱 Mobile-first responsive design</li>
+        <li>🎨 Clean, premium purple-white theme</li>
+      </ul>
+    </section>
+
+    <!-- Role & Outcome -->
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">My Role & Outcome</h3>
+      <p class="text-gray-700 leading-relaxed mb-2">
+        <strong>Role:</strong> Designed and developed the complete website, including layout, styling, interactivity, and responsiveness for a smooth user experience.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Outcome:</strong> Enhanced brand presence, increased customer engagement, and provided an intuitive platform for ordering cakes online.
+      </p>
+    </section>
+
+    <!-- Modal Buttons -->
+    <div class="project-buttons mt-4 flex justify-center gap-4">
+      <button onclick="closeModal('jazacakesModal')" class="px-6 py-3 rounded-xl border border-evoblue text-evoblue font-semibold hover:bg-evoblue hover:text-white transition">Close</button>
+    </div>
+  </div>
+</div>
+
+
+
+ <!-- visa Modal -->
+   
+
+<div id="niimmigrationModal" class="project-modal fixed inset-0 hidden justify-center items-start z-50 overflow-auto px-4 py-8 pt-20">
+  <div class="modal-content bg-white rounded-3xl w-full max-w-3xl p-8 relative shadow-2xl">
+    
+    <!-- Close Button -->
+    <button onclick="closeModal('niimmigrationModal')" class="absolute top-4 right-6 text-gray-400 hover:text-evoblue text-3xl font-bold">&times;</button>
+
+    <!-- Header -->
+    <div class="text-center mb-6">
+      <h2 class="text-3xl font-semibold text-evoblue">Niimmigration — Visa Consultancy</h2>
+      <p class="mt-2 text-gray-600">Comprehensive visa services for individuals and businesses seeking global opportunities.</p>
+    </div>
+
+    <!-- Project Image -->
+    <div class="mb-6 rounded-xl overflow-hidden shadow-md">
+      <img src="images/niimmigration-header.jpg" alt="Niimmigration — Visa Consultancy" class="w-full h-64 object-cover">
+    </div>
+
+    <!-- Key Features -->
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Key Features:</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>Study, Business, Freelancer, Tourist, Work & Umrah visa services.</li>
+        <li>Assistance for multiple countries: USA, Canada, UK, Australia, Singapore, Dubai.</li>
+        <li>Additional services: Hotel booking, Air ticketing, Tour packages.</li>
+        <li>Responsive, user-friendly website with clear contact and registration forms.</li>
+      </ul>
+    </section>
+
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Role & Outcome</h3>
+      <p class="text-gray-700 leading-relaxed mb-2">
+        <strong>Role:</strong> Designed and developed a fully responsive website using HTML, Tailwind CSS, and Node.js, ensuring optimal user experience across devices.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Outcome:</strong> The website helped the consultancy improve online visibility, streamline inquiries, and provide clear information about services and visa processes.
+      </p>
+    </section>
+
+    <!-- Modal Buttons -->
+    <div class="project-buttons mt-4 flex justify-center gap-4">
+      <button class="px-6 py-3 rounded-xl border border-evoblue text-evoblue font-semibold hover:bg-evoblue hover:text-white transition" onclick="closeModal('niimmigrationModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+
+     
+
+      <!-- AMT Tea Modal -->
+<div id="amtTeaModal" class="project-modal fixed inset-0 hidden justify-center items-start z-50 overflow-auto px-4 py-8 pt-20">
+  <div class="modal-content bg-white rounded-3xl w-full max-w-3xl p-8 relative shadow-2xl">
+    
+    <!-- Close Button -->
+    <button onclick="closeModal('amtTeaModal')" class="absolute top-4 right-6 text-gray-400 hover:text-green-700 text-3xl font-bold">&times;</button>
+
+    <!-- Header -->
+    <div class="text-center mb-6">
+      <h2 class="text-3xl font-semibold text-green-700">AMT Finest Garden Tea</h2>
+      <p class="mt-2 text-gray-600">A responsive website showcasing premium garden tea with detailed product info, brewing guide, and easy ordering options.</p>
+    </div>
+
+    <!-- Project Image -->
+    <div class="mb-6 rounded-xl overflow-hidden shadow-md">
+      <img src="Images/amt-tea.png" alt="AMT Tea" class="w-full h-64 object-cover">
+    </div>
+
+    <!-- Overview Section -->
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Overview</h3>
+      <p class="text-gray-700 leading-relaxed">
+        The AMT Tea website is a clean, modern, and responsive platform to promote and sell premium tea sourced from Kerala’s lush gardens. It highlights product features, nutrition facts, brewing tips, and provides direct contact options for customers via WhatsApp, email, and Facebook.
+      </p>
+    </section>
+
+    <!-- Key Features -->
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">Key Features</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>🍃 Product showcase with images, descriptions, and nutrition facts</li>
+        <li>☕ Step-by-step brewing guide for perfect tea</li>
+        <li>💬 WhatsApp order integration for easy purchases</li>
+        <li>🌐 Email and Facebook contact links</li>
+        <li>📱 Fully responsive design for mobile and desktop</li>
+        <li>🎨 Animated Lottie visuals and smooth hover effects for modern UX</li>
+      </ul>
+    </section>
+
+    <!-- Role & Outcome -->
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">My Role & Outcome</h3>
+      <p class="text-gray-700 leading-relaxed mb-2">
+        <strong>Role:</strong> Designed and developed the full front-end of the website, including layout, styling, responsive design, animations, and integration of contact and ordering features.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        <strong>Outcome:</strong> Delivered a polished, modern website that enhanced brand presence, improved customer engagement, and provided a seamless platform for ordering premium tea online.
+      </p>
+    </section>
+
+    <!-- Modal Buttons -->
+    <div class="project-buttons mt-4 flex justify-center gap-4">
+      <button onclick="closeModal('amtTeaModal')" class="px-6 py-3 rounded-xl border border-green-700 text-green-700 font-semibold hover:bg-green-700 hover:text-white transition">Close</button>
+    </div>
+  </div>
+</div>
+
+
+  
+</section>
+<!-- Thank You Modal -->
+<div id="thankYouModal" class="fixed inset-0 hidden justify-center items-center bg-black bg-opacity-50 z-50">
+  <div class="bg-white rounded-2xl p-8 max-w-sm text-center shadow-lg">
+    <h2 class="text-2xl font-bold text-evoblue mb-2">Thank You!</h2>
+    <p class="text-gray-700 mb-4">Your message has been successfully sent. We’ll get back to you shortly.</p>
+    <button onclick="closeThankYouModal()" class="px-6 py-2 bg-evoblue text-white rounded-lg hover:bg-evopurple transition">Close</button>
+  </div>
+</div>
+
+
+
+      <!-- SERVICES -->
+      <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 lg:px-12">
+          <div class="text-center mb-10" data-aos="fade-up">
+            <h2 class="text-3xl font-serifHead">What We Do</h2>
+            <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Complete web solutions from concept to launch — tailored to your budget and goals.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 bg-white rounded-xl shadow-sm" data-aos="fade-up">
+              <h4 class="font-semibold">Custom Website Design</h4>
+              <p class="mt-2 text-sm text-gray-500">Pixel-perfect designs that reflect your brand identity.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="60">
+              <h4 class="font-semibold">Frontend Development</h4>
+              <p class="mt-2 text-sm text-gray-500">Responsive, accessible, and fast-loading interfaces.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="120">
+              <h4 class="font-semibold">Backend & Integrations</h4>
+              <p class="mt-2 text-sm text-gray-500">Contact forms, CMS, APIs, and payment integrations.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-sm" data-aos="fade-up" data-aos-delay="180">
+              <h4 class="font-semibold">Maintenance & Support</h4>
+              <p class="mt-2 text-sm text-gray-500">Ongoing care to keep your site secure and up-to-date.</p>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center" data-aos="fade-up">
+            <a href="#contact" class="inline-block px-6 py-3 rounded-md border border-evoblue text-evoblue hover:bg-evoblue hover:text-white transition">Get a Quote</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+          <h2 class="text-3xl font-serifHead">About EvoVision</h2>
+          <p class="mt-4 text-gray-600">EvoVision is a boutique web studio focused on delivering elegant digital experiences that are both visually appealing and technically robust. We believe in clear communication, honest pricing, and designs that stand the test of time.</p>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div class="p-6 bg-gray-50 rounded-xl">
+              <h4 class="font-semibold">Our Philosophy</h4>
+              <p class="mt-2 text-sm text-gray-500">Design with purpose. Build for performance.</p>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-xl">
+              <h4 class="font-semibold">Quality</h4>
+              <p class="mt-2 text-sm text-gray-500">Attention to detail in design and code.</p>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-xl">
+              <h4 class="font-semibold">Client-first</h4>
+              <p class="mt-2 text-sm text-gray-500">Flexible plans that respect your budget.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     <!-- ====== CONTACT ====== -->
+<section id="contact" class="py-20 bg-evolight">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-3xl font-serifHead">Let’s build something beautiful</h2>
+      <p class="mt-3 text-gray-600">Tell us about your project and we’ll get back with a tailored plan and estimate.</p>
+    </div>
+
+    <div class="bg-white rounded-3xl p-10 shadow-xl" data-aos="fade-up" data-aos-delay="60">
+      <!-- Netlify form -->
+      <form name="contact" method="POST" data-netlify="true" class="space-y-6 action="/thank-you.html">
+        <input type="hidden" name="form-name" value="contact">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input required name="name" placeholder="Your Name" class="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-evoblue focus:outline-none" />
+          <input required name="email" type="email" placeholder="Email Address" class="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-evoblue focus:outline-none" />
+        </div>
+
+        <textarea required name="message" rows="5" placeholder="Tell us about your project" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-evoblue focus:outline-none"></textarea>
+
+       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+  <button type="submit" class="px-6 py-3 rounded-lg bg-evoblue text-white font-semibold hover:bg-evopurple transition">
+    Send Message
+  </button>
+      <div class="flex flex-col items-center md:items-start">
+    <!-- WhatsApp button with pre-filled message -->
+    <a href="https://wa.me/916235824023?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20project%20services." 
+       target="_blank"
+       class="px-6 py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.44 1.28 4.94l-1.34 4.9 5.06-1.32c1.47.8 3.12 1.25 4.96 1.25 5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.44 14.48c-.22.61-1.24 1.15-1.74 1.21-.45.06-1.01.09-4.03-1.29-3.52-1.71-5.8-6.18-5.96-6.46-.16-.28-1.38-1.8-1.38-3.43 0-1.62.86-2.42 1.17-2.74.31-.31.72-.52 1.1-.52.39 0 .77.03 1.1.03.35 0 .53-.03.77.43.22.45.75 1.57.81 1.69.06.12.1.24.02.37-.06.12-.1.2-.2.31-.1.1-.22.24-.33.36-.11.12-.22.26-.32.38-.1.12-.2.26-.09.5.12.24.53.88 1.13 1.42.78.72 1.46.96 1.7 1.07.24.12.38.1.52-.06.12-.16.53-.62.67-.83.14-.21.28-.18.52-.11.24.06 1.51.71 1.77.84.26.12.44.18.51.28.07.1.07.57-.15 1.18z"/>
+      </svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+      </form>
+    </div>
+
+    <div class="mt-8 text-center text-gray-600" data-aos="fade-up" data-aos-delay="120">
+      <p>Or reach out via email: <a href="mailto:hello@evovision.com" class="text-evoblue font-medium">hello@evovision.com</a> · <a href="#" class="text-evoblue font-medium">LinkedIn</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="bg-evoblue text-white py-8 mt-12">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="text-center md:text-left">
+      <h3 class="text-xl font-semibold">EvoVision</h3>
+      <p class="text-sm mt-1">&copy; 2025 EvoVision. All rights reserved.</p>
+    </div>
+ <div class="flex gap-6 justify-center mt-6">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/916235824023" target="_blank" 
+     class="text-green-500 hover:text-green-600 transition transform hover:scale-110">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.44 1.28 4.94l-1.34 4.9 5.06-1.32c1.47.8 3.12 1.25 4.96 1.25 5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.44 14.48c-.22.61-1.24 1.15-1.74 1.21-.45.06-1.01.09-4.03-1.29-3.52-1.71-5.8-6.18-5.96-6.46-.16-.28-1.38-1.8-1.38-3.43 0-1.62.86-2.42 1.17-2.74.31-.31.72-.52 1.1-.52.39 0 .77.03 1.1.03.35 0 .53-.03.77.43.22.45.75 1.57.81 1.69.06.12.1.24.02.37-.06.12-.1.2-.2.31-.1.1-.22.24-.33.36-.11.12-.22.26-.32.38-.1.12-.2.26-.09.5.12.24.53.88 1.13 1.42.78.72 1.46.96 1.7 1.07.24.12.38.1.52-.06.12-.16.53-.62.67-.83.14-.21.28-.18.52-.11.24.06 1.51.71 1.77.84.26.12.44.18.51.28.07.1.07.57-.15 1.18z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/evovisionstudio" target="_blank" 
+     class="text-pink-500 hover:text-pink-600 transition transform hover:scale-110">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.5-.8a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/evovisionstudio" target="_blank" 
+     class="text-blue-600 hover:text-blue-700 transition transform hover:scale-110">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M4.98 3A2 2 0 0 0 3 5c0 1.1.9 2 1.98 2A2 2 0 0 0 7 5a2 2 0 0 0-2.02-2zM3 8h4v12H3zM9 8h3.6v1.71h.05c.5-.9 1.73-1.85 3.57-1.85C19.2 7.86 21 9.5 21 12.75V20h-4v-6.5c0-1.55-.03-3.54-2.16-3.54-2.17 0-2.5 1.69-2.5 3.43V20H9V8z"/>
+    </svg>
+  </a>
+</div>
+
+  </div>
+</footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  </body>
+</html>

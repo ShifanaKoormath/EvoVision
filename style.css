@@ -1,0 +1,158 @@
+:root { --accent: #1e3a8a; }
+
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.30));
+  backdrop-filter: blur(6px);
+}
+
+.logo-mark { font-family: var(--playfair, 'Playfair Display'); }
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-slideUp {
+  animation: slideUp 0.4s ease-out;
+}
+:root {
+  --accent: #1e3a8a; /* deep elegant blue */
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.6); /* semi-transparent white */
+  backdrop-filter: blur(6px); /* glass blur effect */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.text-evoblue {
+  color: var(--accent);
+}
+
+.border-evoblue {
+  border-color: var(--accent);
+}
+
+.bg-evoblue {
+  background-color: var(--accent);
+}
+
+.bg-evolight {
+  background-color: #eef2ff;
+}
+
+.font-serifHead {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Poppins', sans-serif;
+}
+/* Project card hover effect */
+.swiper {
+  width: 100%;
+  padding-bottom: 2rem; /* optional: space for pagination */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center; /* centers each card */
+}
+
+
+.swiper-slide .project-card {
+  width: 100%;
+  max-width: 320px; /* adjust: controls card size */
+}
+
+
+.swiper-slide .project-card:hover,
+.swiper-slide .project-card:active {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+/* Project card hover/tap effect */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.project-card:active {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+/* Optional for touch devices */
+.project-card.hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}/* Details button hover */
+.project-card .details-btn,
+.project-modal .project-buttons a:last-child {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card .details-btn:hover,
+.project-modal .project-buttons a:last-child:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #2563eb; /* evoblue */
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+.swiper-pagination-bullet-active {
+  background-color: #7c3aed; /* evopurple */
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Modal overlay */
+.project-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling for mobile */
+
+  transition: background-color 0.3s ease;
+}
+
+/* Modal content animation */
+.modal-content {
+  animation: slideUp 0.4s ease forwards;
+  max-height: 90vh; /* allows scrolling if content is long */
+  overflow-y: auto;
+}
+
+/* Scrollbar styling (optional, modern touch) */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 90, 250, 0.6);
+  border-radius: 4px;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Slide-up keyframes */
+@keyframes slideUp {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Professional font and spacing */
+.modal-content h2, .modal-content h3 {
+  font-family: 'Inter', sans-serif;
+}
+.modal-content p, .modal-content li {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
