@@ -65,23 +65,45 @@ document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('touchstart', () => card.classList.add('hover'));
   card.addEventListener('touchend', () => card.classList.remove('hover'));
 });
-// Form submission thankyou
+// Form submission thank you
 const form = document.querySelector('form[name="contact"]');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault(); // prevent default form submission
 
-    // Optionally, send the form data via Netlify
-    const formData = new FormData(form);
-    fetch('/', {
-      method: 'POST',
-      body: formData
-    }).then(() => {
+form.addEventListener('submit', function(e) {
+  e.preventDefault(); // prevent default form submission
+
+  const formData = new FormData(form);
+
+  // Send form data to Formspree (or Netlify)
+  fetch('https://formspree.io/f/mvgwvebq', { // replace with your endpoint
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
       // Show the thank you modal
-      document.getElementById('thankYouModal').classList.remove('hidden');
-      form.reset(); // Clear the form fields
-    }).catch((error) => alert('Oops! There was a problem.'));
-  });
+      const modal = document.getElementById('thankYouModal');
+      modal.classList.remove('hidden');
 
-  function closeThankYouModal() {
-    document.getElementById('thankYouModal').classList.add('hidden');
-  }
+      // Reset the form
+      form.reset();
+
+      // Scroll form into view
+      form.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      return response.json().then(data => {
+        throw new Error(data.error || 'Form submission failed');
+      });
+    }
+  }).catch((error) => alert('Oops! There was a problem: ' + error.message));
+});
+
+// Close modal
+function closeThankYouModal() {
+  const modal = document.getElementById('thankYouModal');
+  modal.classList.add('hidden');
+
+  // Optional: scroll back to top of the page
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
