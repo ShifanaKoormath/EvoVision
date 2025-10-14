@@ -29,88 +29,103 @@
   </head>
   <body class="antialiased text-gray-800 bg-white font-body">
 
-    <!-- ===== HEADER ===== -->
-    <header class="fixed w-full z-40 bg-white/60 backdrop-blur-sm shadow-sm">
-      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" class="text-2xl font-serifHead text-evoblue tracking-wide">EvoVision</a>
-        <nav class="hidden md:flex gap-6 items-center text-sm">
-          <a href="#work" class="hover:text-evoblue">Work</a>
-          <a href="#services" class="hover:text-evoblue">Services</a>
-          <a href="#about" class="hover:text-evoblue">About</a>
-          <a href="#contact" class="px-4 py-2 rounded-md border border-evoblue text-evoblue hover:bg-evoblue hover:text-white transition">Contact</a>
-        </nav>
-        <div class="md:hidden">
-          <button id="menuBtn" aria-label="Open menu" class="p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+<!-- ===== HEADER ===== -->
+<header class="fixed w-full z-50 bg-white/70 backdrop-blur-md shadow-sm transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#hero" class="text-2xl font-serifHead text-evoblue tracking-wide hover:text-evopurple transition">EvoVision</a>
 
-    <!-- ===== MOBILE MENU ===== -->
-    <div id="mobileMenu" class="hidden fixed inset-0 bg-black/40 z-30">
-      <div class="bg-white w-64 h-full p-6">
-        <div class="flex justify-between items-center mb-6">
-          <div class="text-xl font-serifHead text-evoblue">EvoVision</div>
-          <button id="closeMenu" aria-label="Close menu">✕</button>
-        </div>
-        <nav class="flex flex-col gap-4">
-          <a href="#work" class="py-2 border-b">Work</a>
-          <a href="#services" class="py-2 border-b">Services</a>
-          <a href="#about" class="py-2 border-b">About</a>
-          <a href="#contact" class="py-2 border-b">Contact</a>
-        </nav>
-      </div>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-8 items-center text-sm font-medium">
+      <a href="#work" class="text-gray-700 hover:text-evoblue transition">Work</a>
+      <a href="#services" class="text-gray-700 hover:text-evoblue transition">Services</a>
+      <a href="#about" class="text-gray-700 hover:text-evoblue transition">About</a>
+      <a href="#contact" class="px-4 py-2 rounded-md border border-evoblue text-evoblue hover:bg-evoblue hover:text-white transition shadow-sm">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="menuBtn" aria-label="Open menu" class="p-2 rounded-md hover:bg-evoblue/10 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-evoblue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
+  </div>
+</header>
 
-    <main class="pt-24">
-      <!-- HERO -->
-      <section id="hero" class="min-h-screen flex items-center">
-        <div class="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-12">
-          <div class="lg:w-6/12 flex flex-col justify-center" data-aos="fade-up">
-            <p class="text-sm uppercase tracking-widest text-evoblue font-semibold">EvoVision</p>
-            <h1 class="mt-4 font-serifHead text-4xl md:text-5xl leading-tight">Elegant. Functional. Affordable.</h1>
-            <p class="mt-4 text-gray-600 max-w-xl">We design and develop beautiful, responsive websites crafted to reflect your brand and convert visitors into customers. Clean aesthetics, solid performance, and development that covers frontend & backend.</p>
-            <div class="mt-8 flex gap-4">
-              <a href="#work" class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-evoblue text-white shadow hover:shadow-lg transition">View Our Work</a>
-              <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-evoblue text-evoblue hover:bg-evoblue hover:text-white transition">Start a Project</a>
-            </div>
-            <div class="mt-8 flex gap-6 text-sm text-gray-500">
-              <div><span class="font-semibold text-gray-800">Live</span> Projects</div>
-              <div><span class="font-semibold text-gray-800">Full-stack</span> Development</div>
-              <div><span class="font-semibold text-gray-800">Budget-friendly</span> Packages</div>
-            </div>
-          </div>
+<!-- ===== MOBILE MENU ===== -->
+<div id="mobileMenu" class="hidden fixed inset-0 bg-black/50 z-40 backdrop-blur-sm">
+  <div class="bg-white w-64 h-full p-6 shadow-xl rounded-r-2xl">
+    <div class="flex justify-between items-center mb-6">
+      <div class="text-xl font-serifHead text-evoblue">EvoVision</div>
+      <button id="closeMenu" aria-label="Close menu" class="text-gray-500 hover:text-evoblue">✕</button>
+    </div>
+    <nav class="flex flex-col gap-4 text-gray-700 font-medium">
+      <a href="#work" class="py-2 border-b hover:text-evoblue">Work</a>
+      <a href="#services" class="py-2 border-b hover:text-evoblue">Services</a>
+      <a href="#about" class="py-2 border-b hover:text-evoblue">About</a>
+      <a href="#contact" class="py-2 border-b hover:text-evoblue">Contact</a>
+    </nav>
+  </div>
+</div>
 
-          <div class="lg:w-6/12 flex items-center justify-center" data-aos="fade-left">
-            <div class="w-full max-w-md glass rounded-2xl p-6 shadow-lg">
-              <div class="relative overflow-hidden rounded-xl">
-                <!-- Hero mockup / gradient -->
-                <div class="h-64 md:h-80 bg-gradient-to-br from-evolight to-white flex items-center justify-center">
-                  <div class="text-center">
-                    <h3 class="text-lg font-semibold text-evoblue">Studio Showcase</h3>
-                    <p class="mt-2 text-sm text-gray-600">Beautiful websites, tailored to your brand.</p>
-                  </div>
-                </div>
-                <div class="p-4">
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <p class="text-sm text-gray-500">Specialty</p>
-                      <p class="font-medium">Responsive & Classy Designs</p>
-                    </div>
-                    <div class="text-right">
-                      <p class="text-sm text-gray-500">Turnaround</p>
-                      <p class="font-medium">Fast & Reliable</p>
-                    </div>
-                  </div>
-                </div>
+<main class="pt-24">
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="min-h-screen flex items-center bg-gradient-to-br from-white via-evolight to-evoblue/10">
+    <div class="max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row gap-12 items-center">
+      <!-- Left Content -->
+      <div class="lg:w-6/12" data-aos="fade-up">
+        <p class="text-sm uppercase tracking-[0.2em] text-evoblue font-semibold">EvoVision Studio</p>
+        <h1 class="mt-4 font-serifHead text-4xl md:text-6xl leading-tight text-gray-900">
+          Designing Digital <span class="text-evoblue">Elegance</span>.
+        </h1>
+        <p class="mt-6 text-gray-600 max-w-lg leading-relaxed">
+          We craft visually stunning, high-performing websites that tell your brand story and engage users — from concept to code.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#work" class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-evoblue text-white font-medium shadow hover:shadow-lg hover:bg-evopurple transition">
+             View Our Work
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-evoblue text-evoblue font-medium hover:bg-evoblue hover:text-white transition">
+             Start a Project
+          </a>
+        </div>
+        <div class="mt-10 flex gap-8 text-gray-500 text-sm">
+          <div><span class="font-semibold text-gray-800">End-to-End</span> Development</div>
+          <div><span class="font-semibold text-gray-800">Custom</span> Design</div>
+          <div><span class="font-semibold text-gray-800">Timely</span> Delivery</div>
+        </div>
+      </div>
+
+      <!-- Right Visual / Showcase -->
+      <div class="lg:w-6/12 flex justify-center" data-aos="fade-left">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-evoblue to-evopurple rounded-3xl blur opacity-30 group-hover:opacity-50 transition"></div>
+          <div class="relative bg-white rounded-3xl p-6 shadow-xl">
+            <div class="h-64 md:h-80 flex items-center justify-center bg-gradient-to-br from-white to-evolight rounded-2xl">
+              <div class="text-center">
+                <h3 class="text-xl font-semibold text-evoblue">Beautiful Websites</h3>
+                <p class="mt-2 text-gray-600 text-sm">Built with precision and performance in mind.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex items-center justify-between text-sm">
+              <div>
+                <p class="text-gray-500">Specialty</p>
+                <p class="font-medium">Responsive, Classy UI</p>
+              </div>
+              <div class="text-right">
+                <p class="text-gray-500">Delivery</p>
+                <p class="font-medium">Fast & Reliable</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
+</main>
+
 
 
 <!-- ====== Work Section ====== -->
