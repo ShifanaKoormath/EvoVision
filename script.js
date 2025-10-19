@@ -35,7 +35,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (this.getAttribute('href') === '#') return;
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
-    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+const headerOffset = document.querySelector('header').offsetHeight;
+const elementPosition = target.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+window.scrollTo({
+  top: offsetPosition,
+  behavior: "smooth"
+});
     mobileMenu?.classList.add('hidden'); // close mobile menu
   });
 });
