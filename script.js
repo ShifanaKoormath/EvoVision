@@ -1,14 +1,34 @@
 // Initialize AOS
 AOS.init({ duration: 700, once: true });
 
-// Mobile Menu
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-const closeMenu = document.getElementById('closeMenu');
+  const menuBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuLinks = mobileMenu.querySelectorAll("nav a");
 
-menuBtn?.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-closeMenu?.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  // Toggle menu on button click
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
 
+  // Close button
+  closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+  });
+
+  // Close menu when a link is clicked
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+
+  // Optional: close when clicking outside the menu
+  mobileMenu.addEventListener("click", (e) => {
+    if(e.target === mobileMenu) {
+      mobileMenu.classList.add("hidden");
+    }
+  });
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
