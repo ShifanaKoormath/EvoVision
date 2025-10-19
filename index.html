@@ -32,8 +32,10 @@
 <!-- ===== HEADER ===== -->
 <header class="fixed w-full z-50 bg-white/70 backdrop-blur-md shadow-sm transition-all duration-300">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <!-- Logo -->
-    <a href="#hero" class="text-2xl font-serifHead text-evoblue tracking-wide hover:text-evopurple transition">EvoVision</a>
+<!-- Logo -->
+<a href="#hero" class="inline-block hover:opacity-80 transition">
+  <img src="images/EvoVision_logo_transparent.png" alt="EvoVision Logo" class="h-16 sm:h-20 md:h-24 w-auto">
+</a>
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-8 items-center text-sm font-medium">
@@ -479,22 +481,29 @@
     <!-- Hidden field for Formspree (optional, can be omitted) -->
     <input type="hidden" name="_subject" value="New message from EvoVision Contact Form">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <input 
-        required 
-        name="name" 
-        type="text" 
-        placeholder="Your Name" 
-        class="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-evoblue focus:outline-none" 
-      />
-      <input 
-        required 
-        name="email" 
-        type="email" 
-        placeholder="Email Address" 
-        class="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-evoblue focus:outline-none" 
-      />
-    </div>
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <input 
+    required 
+    name="name" 
+    type="text" 
+    placeholder="Your Name" 
+    class="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-evoblue focus:outline-none" 
+  />
+  <input 
+    required 
+    name="email" 
+    type="email" 
+    placeholder="Email Address" 
+    class="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-evoblue focus:outline-none" 
+  />
+  <input 
+    required 
+    name="contact" 
+    type="tel" 
+    placeholder="Contact Number" 
+    class="px-4 py-3 border rounded-lg focus:ring-2 focus:ring-evoblue focus:outline-none" 
+  />
+</div>
 
     <textarea 
       required 
