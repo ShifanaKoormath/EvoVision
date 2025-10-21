@@ -28,19 +28,33 @@
 
   </head>
 <body class="antialiased text-gray-800 bg-white font-body overflow-x-hidden">
+<!-- Intro Overlay -->
+<div id="introOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-white">
+  <div class="relative flex flex-col items-center">
+    <img src="images/EvoVision_logo_transparent.png" 
+         alt="EvoVision Logo" 
+         id="introLogo" 
+         class="h-20 w-44 object-contain">
+    <!-- Soft halo rings -->
+    <span class="halo-ring ring1"></span>
+    <span class="halo-ring ring2"></span>
+    <span class="halo-ring ring3"></span>
+  </div>
+</div>
 
-<!-- ===== HEADER ===== -->
+
+
+
+
 <header class="fixed w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
-<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between flex-wrap">
+  <div id="headerContent" class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between flex-wrap opacity-0">
     <!-- Logo -->
-  <a href="#hero" class="inline-block hover:opacity-80 transition">
-  <img src="images/EvoVision_logo_transparent.png"
-       alt="EvoVision Logo"
-            id="headerLogo"
-       class="h-16 w-40 object-contain"
-       >
-</a>
-
+    <a href="#hero" class="inline-block hover:opacity-80 transition">
+      <img src="images/EvoVision_logo_transparent.png" 
+           alt="EvoVision Logo"
+           id="headerLogo"
+           class="h-16 w-40 object-contain">
+    </a>
 
     <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-8 items-center text-sm font-medium flex-shrink">
@@ -58,9 +72,9 @@
         </svg>
       </button>
     </div>
-
   </div>
 </header>
+
 
 <!-- ===== MOBILE MENU ===== -->
 <div id="mobileMenu" class="hidden fixed inset-0 bg-black/50 z-40 backdrop-blur-sm">

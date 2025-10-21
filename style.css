@@ -17,11 +17,89 @@
 :root {
   --accent: #1e3a8a; /* deep elegant blue */
 }
-#headerLogo {
-  max-width: 120px; /* mobile friendly */
-  height: 4rem;
-  flex-shrink: 1;
+:root {
+  --accent: #1e3a8a; /* evoblue */
+  --silver: #c0c0c0;
 }
+:root {
+  --accent: #1e3a8a; /* Evoblue */
+  --silver: #c0c0c0;
+}
+:root {
+  --accent: #1e3a8a; /* Evoblue */
+  --silver: #c0c0c0;
+}
+
+/* Logo pop with subtle bounce */
+@keyframes logoPop {
+  0% { transform: scale(0.6); opacity: 0; }
+  40% { transform: scale(1.15); opacity: 1; }
+  60% { transform: scale(0.95); opacity: 1; }
+  80% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+#introLogo {
+  animation: logoPop 1.2s ease-out forwards;
+  z-index: 20;
+  position: relative;
+}
+
+/* Halo rings */
+.halo-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  width: 5rem;
+  height: 5rem;
+  opacity: 0;
+  animation: ringExpandFade 1.5s ease-out forwards;
+  box-shadow: 0 0 15px rgba(30,58,138,0.5);
+}
+
+.ring2 { border-color: var(--silver); width: 6rem; height: 6rem; animation-delay: 0.1s; }
+.ring3 { border-color: var(--accent); width: 7rem; height: 7rem; animation-delay: 0.2s; }
+
+@keyframes ringExpandFade {
+  0% { transform: scale(0.5); opacity: 0.6; }
+  50% { transform: scale(2.5); opacity: 0.3; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* Overlay fade out */
+@keyframes fadeOutOverlay {
+  0% { opacity: 1; }
+  100% { opacity: 0; pointer-events: none; }
+}
+
+#introOverlay.fadeOut {
+  animation: fadeOutOverlay 0.6s forwards;
+}
+
+/* Main content fade in */
+@keyframes contentFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+main.fadeIn {
+  animation: contentFade 0.6s forwards;
+}
+
+
+
+
+
+
+@keyframes fadeDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-down {
+  animation: fadeDown 0.8s ease forwards;
+}
+
 
 header {
   background-color: rgba(255, 255, 255, 0.6); /* semi-transparent white */

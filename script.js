@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('introOverlay');
+  const main = document.querySelector('main');
+  const headerLogo = document.getElementById('headerLogo');
+
+  setTimeout(() => {
+    overlay.classList.add('fadeOut');    // overlay fades out
+   headerContent.classList.add('fade-down');
+    main.classList.add('fadeIn');        // main content fades in
+  }, 1400); // matches logo & ring animation duration
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
 
    const header = document.querySelector('header');
   header.style.transform = 'translateY(0)'; // trigger repaint
