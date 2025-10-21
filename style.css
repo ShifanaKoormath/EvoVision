@@ -31,6 +31,7 @@
 #introLogo {
   animation: logoPop 1.2s ease-out forwards;
   z-index: 20;
+    transform-origin: center center; /* ensure scaling from center */
   position: relative;
 }
 
@@ -68,6 +69,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.intro-content {
+  position: relative; /* halos now absolutely positioned inside this container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Overlay content */

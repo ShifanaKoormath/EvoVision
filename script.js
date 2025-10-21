@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('introOverlay');
   const main = document.querySelector('main');
   const headerLogo = document.getElementById('headerLogo');
-
+ const headerContent = document.getElementById('headerContent');
   setTimeout(() => {
     overlay.classList.add('fadeOut');    // overlay fades out
    headerContent.classList.add('fade-down');
@@ -95,72 +95,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300); // match transition duration
   }
 
- // ===== PROJECT SCREENSHOTS SWIPER =====
-const projectSwiper = new Swiper('.project-screenshots', {
-  slidesPerView: 1,
-  spaceBetween: 16,
-  loop: true,
-  autoplay: {
-    delay: 3500,
-    disableOnInteraction: true,
-  },
-  speed: 1000,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
-
-
-// ===== MAIN PROJECTS SWIPER =====
 const swiper = new Swiper('.swiper', {
-  slidesPerView: 1,
+  slidesPerView: 1,        // keep 1 initially for mobile
   spaceBetween: 24,
   loop: true,
-  autoplay: false,          // starts only on user interaction if you want
-  speed: 1000,              // smooth transition speed
+  speed: 1000,
   effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
   coverflowEffect: {
-    rotate: 15,             // slight tilt
-    stretch: 0,             // no horizontal stretch
-    depth: 100,             // depth effect
-    modifier: 1,            // intensity
-    slideShadows: false,    // no shadow for cleaner look
+    rotate: 15,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: false,
   },
   breakpoints: {
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
+    768: { slidesPerView: 2, centeredSlides: false, effect: 'slide' },
+    1024: { slidesPerView: 3, centeredSlides: false, effect: 'slide' },
   },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: true,
   },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
 });
 
 
 
-// ===== START AUTOPLAY WHEN WORK SECTION IS VISIBLE =====
+
 const workSection = document.getElementById('work');
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        swiper.autoplay.start(); // 🔹 start only when visible
+        swiper.autoplay.start();
       } else {
-        swiper.autoplay.stop(); // optional — stops when scrolled away
+        swiper.autoplay.stop();
       }
     });
   },
-  { threshold: 0.3 } // trigger when 30% of work section is visible
+  { threshold: 0.3 }
 );
 
 observer.observe(workSection);
