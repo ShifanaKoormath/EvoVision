@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+   const header = document.querySelector('header');
+  header.style.transform = 'translateY(0)'; // trigger repaint
   // ===== Initialize AOS =====
   AOS.init({ duration: 700, once: true });
 
