@@ -17,6 +17,11 @@
 :root {
   --accent: #1e3a8a; /* deep elegant blue */
 }
+#headerLogo {
+  max-width: 120px; /* mobile friendly */
+  height: 4rem;
+  flex-shrink: 1;
+}
 
 header {
   background-color: rgba(255, 255, 255, 0.6); /* semi-transparent white */
