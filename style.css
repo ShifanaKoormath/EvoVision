@@ -14,17 +14,7 @@
 .animate-slideUp {
   animation: slideUp 0.4s ease-out;
 }
-:root {
-  --accent: #1e3a8a; /* deep elegant blue */
-}
-:root {
-  --accent: #1e3a8a; /* evoblue */
-  --silver: #c0c0c0;
-}
-:root {
-  --accent: #1e3a8a; /* Evoblue */
-  --silver: #c0c0c0;
-}
+
 :root {
   --accent: #1e3a8a; /* Evoblue */
   --silver: #c0c0c0;

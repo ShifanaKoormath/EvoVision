@@ -6,8 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     overlay.classList.add('fadeOut');    // overlay fades out
    headerContent.classList.add('fade-down');
-    main.classList.add('fadeIn');        // main content fades in
+    main.classList.add('fadeIn');       // main content fades in
+   // ✅ Refresh AOS after intro finishes
+    setTimeout(() => {
+      if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+      }
+    }, 800);
   }, 1400); // matches logo & ring animation duration
+
 });
 
 
@@ -88,28 +95,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300); // match transition duration
   }
 
-  // ===== SWIPER SLIDERS =====
-  const projectSwiper = new Swiper('.project-screenshots', {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    loop: true,
-    autoplay: { delay: 3500 },
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-  });
+ // ===== PROJECT SCREENSHOTS SWIPER =====
+const projectSwiper = new Swiper('.project-screenshots', {
+  slidesPerView: 1,
+  spaceBetween: 16,
+  loop: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: true,
+  },
+  speed: 1000,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
 
-  const swiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    spaceBetween: 24,
-    loop: true,
-    autoplay: { delay: 4000 },
-    breakpoints: {
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 }
-    },
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
-  });
+
+// ===== MAIN PROJECTS SWIPER =====
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  autoplay: false,          // starts only on user interaction if you want
+  speed: 1000,              // smooth transition speed
+  effect: 'coverflow',
+  coverflowEffect: {
+    rotate: 15,             // slight tilt
+    stretch: 0,             // no horizontal stretch
+    depth: 100,             // depth effect
+    modifier: 1,            // intensity
+    slideShadows: false,    // no shadow for cleaner look
+  },
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+
+
+// ===== START AUTOPLAY WHEN WORK SECTION IS VISIBLE =====
+const workSection = document.getElementById('work');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        swiper.autoplay.start(); // 🔹 start only when visible
+      } else {
+        swiper.autoplay.stop(); // optional — stops when scrolled away
+      }
+    });
+  },
+  { threshold: 0.3 } // trigger when 30% of work section is visible
+);
+
+observer.observe(workSection);
+
 
   // ===== TOUCH EFFECTS FOR MOBILE =====
   document.querySelectorAll('.project-card').forEach(card => {
