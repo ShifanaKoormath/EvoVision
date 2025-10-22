@@ -26,9 +26,8 @@
   transform-origin: center center;
   position: relative;
   z-index: 20;
-  height: 80px;
-  width: auto;
-  max-width: 80vw;
+    max-width: 70%;
+  height: auto;
 }
 
 /* Halo rings */
@@ -74,14 +73,11 @@
 .intro-content {
   position: relative;
   display: flex;
-    flex-direction: column;
-
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;           /* fills overlay horizontally */
-  height: 100%;          /* fills overlay vertically */
-  max-width: 100vw;      /* optional, just to prevent overflow */
-  max-height: 100vh;   
+  height: 100%;          /* fills overlay vertically */  
 }
 
 
