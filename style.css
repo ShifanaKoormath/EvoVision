@@ -1,36 +1,41 @@
-:root { --accent: #1e3a8a; }
+:root {
+  --accent: #1e3a8a;
+  --silver: #cbd5e1;
+}
 
 .glass {
   background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.30));
   backdrop-filter: blur(6px);
 }
 
-.logo-mark { font-family: var(--playfair, 'Playfair Display'); }
+.logo-mark { 
+  font-family: var(--playfair, 'Playfair Display'); 
+}
 
 @keyframes slideUp {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
 .animate-slideUp {
   animation: slideUp 0.4s ease-out;
 }
 
-:root {
-  --accent: #1e3a8a;
-  --silver: #cbd5e1;
-}
-
-/* Overlay base */
+/* ===== INTRO OVERLAY FIXES ===== */
 #introOverlay {
   position: fixed;
   z-index: 50;
   background: white;
-    inset: 0;
-
+  inset: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Intro content (logo + rings) */
+/* Intro content - FIXED for mobile centering */
 .intro-content {
   position: relative;
   display: flex;
@@ -38,22 +43,23 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 100%;
+  height: 100%;
   padding: 1rem;
   box-sizing: border-box;
 }
 
-/* Logo */
+/* Logo - FIXED responsive sizing */
 #introLogo {
-  height: 80px;   /* adjust as needed */
-  max-width: 70%;
+  height: auto;
+  width: min(70%, 200px);
+  max-height: 80px;
   animation: logoPop 1.2s ease-out forwards;
   transform-origin: center center;
   z-index: 20;
   position: relative;
 }
 
-/* Halo rings */
+/* Halo rings - FIXED for mobile centering */
 .halo-ring {
   position: absolute;
   top: 50%;
@@ -61,8 +67,8 @@
   transform: translate(-50%, -50%);
   border-radius: 50%;
   border: 2px solid var(--accent);
-  width: 5rem;
-  height: 5rem;
+  width: min(20vw, 5rem);
+  height: min(20vw, 5rem);
   opacity: 0;
   animation: ringExpandFade 1.5s ease-out forwards;
   box-shadow: 0 0 15px rgba(30,58,138,0.5);
@@ -70,15 +76,15 @@
 
 .ring2 {
   border-color: var(--silver);
-  width: 6rem;
-  height: 6rem;
+  width: min(24vw, 6rem);
+  height: min(24vw, 6rem);
   animation-delay: 0.1s;
 }
 
 .ring3 {
   border-color: var(--accent);
-  width: 7rem;
-  height: 7rem;
+  width: min(28vw, 7rem);
+  height: min(28vw, 7rem);
   animation-delay: 0.2s;
 }
 
@@ -115,18 +121,6 @@ main.fadeIn {
   animation: contentFade 0.6s forwards;
 }
 
-/* Responsive tweaks */
-@media (max-height: 700px) {
-  #introLogo { height: 60px; }
-  .halo-ring { width: 5.5rem; height: 5.5rem; }
-  .ring2 { width: 6.5rem; height: 6.5rem; }
-  .ring3 { width: 7.5rem; height: 7.5rem; }
-}
-
-
-
-
-
 @keyframes fadeDown {
   0% { opacity: 0; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -136,10 +130,10 @@ main.fadeIn {
   animation: fadeDown 0.8s ease forwards;
 }
 
-
+/* ===== HEADER STYLES ===== */
 header {
-  background-color: rgba(255, 255, 255, 0.6); /* semi-transparent white */
-  backdrop-filter: blur(6px); /* glass blur effect */
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -166,30 +160,30 @@ header {
 .font-body {
   font-family: 'Poppins', sans-serif;
 }
-/* Project card hover effect */
+
+/* ===== SWIPER STYLES ===== */
 .swiper {
   width: 100%;
-  padding-bottom: 2rem; /* optional: space for pagination */
+  padding-bottom: 2rem;
 }
 
 .swiper-slide {
   display: flex;
-  justify-content: center; /* centers each card */
+  justify-content: center;
 }
-
 
 .swiper-slide .project-card {
   width: 100%;
-  max-width: 320px; /* adjust: controls card size */
+  max-width: 320px;
 }
-
 
 .swiper-slide .project-card:hover,
 .swiper-slide .project-card:active {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
-/* Project card hover/tap effect */
+
+/* ===== PROJECT CARD STYLES ===== */
 .project-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -200,35 +194,39 @@ header {
   box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
 
-/* Optional for touch devices */
 .project-card.hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 15px 25px rgba(0,0,0,0.15);
-}/* Details button hover */
+}
+
+/* Details button hover */
 .project-card .details-btn,
 .project-modal .project-buttons a:last-child {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .project-card .details-btn:hover,
 .project-modal .project-buttons a:last-child:hover {
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 8px 15px rgba(0,0,0,0.12);
 }
 
+/* ===== SWIPER PAGINATION ===== */
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: #2563eb; /* evoblue */
+  background-color: #2563eb;
   opacity: 0.7;
   transition: all 0.3s;
 }
+
 .swiper-pagination-bullet-active {
-  background-color: #7c3aed; /* evopurple */
+  background-color: #7c3aed;
   opacity: 1;
   transform: scale(1.2);
 }
 
-/* Modal overlay */
+/* ===== MODAL STYLES ===== */
 .project-modal {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -236,26 +234,26 @@ header {
   justify-content: center;
   padding: 2rem;
   overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* smooth scrolling for mobile */
-
+  -webkit-overflow-scrolling: touch;
   transition: background-color 0.3s ease;
 }
 
-/* Modal content animation */
 .modal-content {
   animation: slideUp 0.4s ease forwards;
-  max-height: 90vh; /* allows scrolling if content is long */
+  max-height: 90vh;
   overflow-y: auto;
 }
 
-/* Scrollbar styling (optional, modern touch) */
+/* Scrollbar styling */
 .modal-content::-webkit-scrollbar {
   width: 8px;
 }
+
 .modal-content::-webkit-scrollbar-thumb {
   background-color: rgba(128, 90, 250, 0.6);
   border-radius: 4px;
 }
+
 .modal-content::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
@@ -270,8 +268,77 @@ header {
 .modal-content h2, .modal-content h3 {
   font-family: 'Inter', sans-serif;
 }
+
 .modal-content p, .modal-content li {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
 }
 
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 768px) {
+  #introLogo {
+    width: min(80%, 180px);
+    max-height: 70px;
+  }
+  
+  .halo-ring {
+    width: min(25vw, 4rem);
+    height: min(25vw, 4rem);
+  }
+  
+  .ring2 {
+    width: min(30vw, 5rem);
+    height: min(30vw, 5rem);
+  }
+  
+  .ring3 {
+    width: min(35vw, 6rem);
+    height: min(35vw, 6rem);
+  }
+  
+  /* Ensure proper mobile viewport */
+  #introOverlay {
+    height: 100dvh; /* Use dynamic viewport height for mobile */
+  }
+}
+
+@media (max-height: 600px) {
+  #introLogo {
+    width: min(60%, 150px);
+    max-height: 60px;
+  }
+  
+  .halo-ring {
+    width: min(20vw, 3.5rem);
+    height: min(20vw, 3.5rem);
+  }
+  
+  .ring2 {
+    width: min(24vw, 4rem);
+    height: min(24vw, 4rem);
+  }
+  
+  .ring3 {
+    width: min(28vw, 4.5rem);
+    height: min(28vw, 4.5rem);
+  }
+}
+
+/* Additional mobile optimization */
+@media (max-width: 480px) {
+  .intro-content {
+    padding: 0.5rem;
+  }
+  
+  #introLogo {
+    width: min(85%, 160px);
+    max-height: 65px;
+  }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  #introOverlay {
+    height: -webkit-fill-available;
+  }
+}
