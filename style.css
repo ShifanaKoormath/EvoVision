@@ -128,11 +128,24 @@ main.fadeIn {
   #introLogo {
     height: 60px;
   }
+
+  /* Keep rings visually strong */
   .halo-ring {
-    width: 4rem;
-    height: 4rem;
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .ring2 {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .ring3 {
+    width: 7.5rem;
+    height: 7.5rem;
   }
 }
+
 
 
 
