@@ -23,24 +23,20 @@
 /* Overlay base */
 #introOverlay {
   position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
   z-index: 50;
   background: white;
-    inset: 0;
-
   overflow: hidden;
 }
 
-/* Intro content (logo + rings) */
 .intro-content {
-  position: relative;
+  position: fixed;       /* fixed ensures viewport centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
 }
 
 /* Logo */
