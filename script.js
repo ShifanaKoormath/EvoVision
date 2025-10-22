@@ -1,13 +1,14 @@
-function setOverlayHeight() {
+function updateOverlayHeight() {
   const overlay = document.getElementById('introOverlay');
   overlay.style.height = `${window.innerHeight}px`;
 }
 
-// Set on load
-setOverlayHeight();
+// Set immediately on load
+updateOverlayHeight();
 
-// Update if orientation changes (optional)
-window.addEventListener('resize', setOverlayHeight);
+// Keep updating if orientation changes (portrait <-> landscape)
+window.addEventListener('resize', updateOverlayHeight);
+
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('introOverlay');
   const main = document.querySelector('main');
