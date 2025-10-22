@@ -16,18 +16,43 @@
 }
 
 :root {
-  --accent: #1e3a8a; /* Evoblue */
-  --silver: #c0c0c0;
+  --accent: #1e3a8a;
+  --silver: #cbd5e1;
 }
 
-/* Logo pop animation */
+/* Overlay base */
+#introOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Intro content (logo + rings) */
+.intro-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Logo */
 #introLogo {
+  height: 80px;   /* adjust as needed */
+  max-width: 70%;
   animation: logoPop 1.2s ease-out forwards;
   transform-origin: center center;
-  position: relative;
   z-index: 20;
-    max-width: 70%;
-  height: auto;
+  position: relative;
 }
 
 /* Halo rings */
@@ -51,6 +76,7 @@
   height: 6rem;
   animation-delay: 0.1s;
 }
+
 .ring3 {
   border-color: var(--accent);
   width: 7rem;
@@ -58,33 +84,7 @@
   animation-delay: 0.2s;
 }
 
-#introOverlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 50;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.intro-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 100%;
-  padding: 1rem;
-}
-
-
-
-
-
-/* Logo pop with subtle bounce */
+/* Animations */
 @keyframes logoPop {
   0% { transform: scale(0.6); opacity: 0; }
   40% { transform: scale(1.15); opacity: 1; }
@@ -98,7 +98,7 @@
   50% { transform: translate(-50%, -50%) scale(2.5); opacity: 0.3; }
   100% { transform: translate(-50%, -50%) scale(4); opacity: 0; }
 }
-/* Overlay fade out */
+
 @keyframes fadeOutOverlay {
   0% { opacity: 1; }
   100% { opacity: 0; pointer-events: none; }
@@ -108,40 +108,23 @@
   animation: fadeOutOverlay 0.6s forwards;
 }
 
-/* Main content fade in */
 @keyframes contentFade {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-
 main.fadeIn {
   animation: contentFade 0.6s forwards;
 }
 
-
-/* Responsive fine-tuning */
+/* Responsive tweaks */
 @media (max-height: 700px) {
-  #introLogo {
-    height: 60px;
-  }
-
-  /* Keep rings visually strong */
-  .halo-ring {
-    width: 5.5rem;
-    height: 5.5rem;
-  }
-
-  .ring2 {
-    width: 6.5rem;
-    height: 6.5rem;
-  }
-
-  .ring3 {
-    width: 7.5rem;
-    height: 7.5rem;
-  }
+  #introLogo { height: 60px; }
+  .halo-ring { width: 5.5rem; height: 5.5rem; }
+  .ring2 { width: 6.5rem; height: 6.5rem; }
+  .ring3 { width: 7.5rem; height: 7.5rem; }
 }
+
 
 
 
