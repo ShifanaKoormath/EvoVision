@@ -79,9 +79,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 100vh; /* ensures it fills the viewport */
-  padding: 1rem; /* optional, prevents clipping on very small screens */
-  box-sizing: border-box;
+   height: 100%; /* now safe because JS sets parent height */
+
 }
 
 
