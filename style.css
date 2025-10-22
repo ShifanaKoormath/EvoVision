@@ -27,12 +27,14 @@
   80% { transform: scale(1.05); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
-
+/* Logo pop animation */
 #introLogo {
   animation: logoPop 1.2s ease-out forwards;
-  z-index: 20;
-    transform-origin: center center; /* ensure scaling from center */
+  transform-origin: center center;
   position: relative;
+  z-index: 20;
+  max-width: 70vw;
+  height: auto;
 }
 
 /* Halo rings */
@@ -50,9 +52,18 @@
   transform: translate(-50%, -50%);
 }
 
-.ring2 { border-color: var(--silver); width: 6rem; height: 6rem; animation-delay: 0.1s; }
-.ring3 { border-color: var(--accent); width: 7rem; height: 7rem; animation-delay: 0.2s; }
-
+.ring2 {
+  border-color: var(--silver);
+  width: 6rem;
+  height: 6rem;
+  animation-delay: 0.1s;
+}
+.ring3 {
+  border-color: var(--accent);
+  width: 7rem;
+  height: 7rem;
+  animation-delay: 0.2s;
+}
 @keyframes ringExpandFade {
   0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.6; }
   50% { transform: translate(-50%, -50%) scale(2.5); opacity: 0.3; }
@@ -68,14 +79,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
+
+/* The container that holds logo + rings */
 .intro-content {
-  position: relative; /* halos now absolutely positioned inside this container */
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 /* Overlay content */
@@ -109,7 +123,16 @@ main.fadeIn {
 }
 
 
-
+/* Responsive fine-tuning */
+@media (max-height: 700px) {
+  #introLogo {
+    height: 60px;
+  }
+  .halo-ring {
+    width: 4rem;
+    height: 4rem;
+  }
+}
 
 
 
