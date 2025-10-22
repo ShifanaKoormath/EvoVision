@@ -1,32 +1,37 @@
-function updateOverlayHeight() {
-  const overlay = document.getElementById('introOverlay');
-  overlay.style.height = `${window.innerHeight}px`;
-}
-
-// Set immediately on load
-updateOverlayHeight();
-
-// Keep updating if orientation changes (portrait <-> landscape)
-window.addEventListener('resize', updateOverlayHeight);
-
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('introOverlay');
   const main = document.querySelector('main');
-  const headerLogo = document.getElementById('headerLogo');
- const headerContent = document.getElementById('headerContent');
-  setTimeout(() => {
-    overlay.classList.add('fadeOut');    // overlay fades out
-   headerContent.classList.add('fade-down');
-    main.classList.add('fadeIn');       // main content fades in
-   // ✅ Refresh AOS after intro finishes
-    setTimeout(() => {
-      if (typeof AOS !== 'undefined') {
-        AOS.refresh();
-      }
-    }, 800);
-  }, 1400); // matches logo & ring animation duration
+  const headerContent = document.getElementById('headerContent');
 
+  // Set overlay height to viewport to handle mobile quirks
+  overlay.style.height = `${window.innerHeight}px`;
+
+  // Delay animations until layout is fully calculated
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      // Start overlay fade and main/header animations
+      setTimeout(() => {
+        overlay.classList.add('fadeOut');       // overlay fades out
+        headerContent.classList.add('fade-down');
+        main.classList.add('fadeIn');           // main content fades in
+
+        // Refresh AOS after intro finishes
+        setTimeout(() => {
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+          }
+        }, 800);
+      }, 1400); // matches logo & ring animation duration
+    });
+  });
 });
+
+// Update overlay height on mobile resize/orientation
+window.addEventListener('resize', () => {
+  const overlay = document.getElementById('introOverlay');
+  overlay.style.height = `${window.innerHeight}px`;
+});
+
 
 
 
