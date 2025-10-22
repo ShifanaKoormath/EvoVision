@@ -19,27 +19,24 @@
   --accent: #1e3a8a; /* Evoblue */
   --silver: #c0c0c0;
 }
-/* Logo pop with subtle bounce */
-@keyframes logoPop {
-  0% { transform: scale(0.6); opacity: 0; }
-  40% { transform: scale(1.15); opacity: 1; }
-  60% { transform: scale(0.95); opacity: 1; }
-  80% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
-}
+
 /* Logo pop animation */
 #introLogo {
   animation: logoPop 1.2s ease-out forwards;
   transform-origin: center center;
   position: relative;
   z-index: 20;
-  max-width: 70vw;
-  height: auto;
+  height: 80px;
+  width: auto;
+  max-width: 80vw;
 }
 
 /* Halo rings */
 .halo-ring {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   border: 2px solid var(--accent);
   width: 5rem;
@@ -47,9 +44,6 @@
   opacity: 0;
   animation: ringExpandFade 1.5s ease-out forwards;
   box-shadow: 0 0 15px rgba(30,58,138,0.5);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .ring2 {
@@ -63,11 +57,6 @@
   width: 7rem;
   height: 7rem;
   animation-delay: 0.2s;
-}
-@keyframes ringExpandFade {
-  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.6; }
-  50% { transform: translate(-50%, -50%) scale(2.5); opacity: 0.3; }
-  100% { transform: translate(-50%, -50%) scale(4); opacity: 0; }
 }
 
 /* Overlay base */
@@ -85,11 +74,11 @@
 .intro-content {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100dvh; /* ✅ keeps center alignment consistent on mobile */
+  overflow: hidden;
 }
 
 /* Overlay content */
@@ -101,6 +90,21 @@
   position: relative;
 }
 
+
+/* Logo pop with subtle bounce */
+@keyframes logoPop {
+  0% { transform: scale(0.6); opacity: 0; }
+  40% { transform: scale(1.15); opacity: 1; }
+  60% { transform: scale(0.95); opacity: 1; }
+  80% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes ringExpandFade {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(2.5); opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) scale(4); opacity: 0; }
+}
 /* Overlay fade out */
 @keyframes fadeOutOverlay {
   0% { opacity: 1; }
