@@ -74,11 +74,14 @@
 .intro-content {
   position: relative;
   display: flex;
+    flex-direction: column;
+
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100dvh; /* ✅ keeps center alignment consistent on mobile */
-  overflow: hidden;
+  width: 100%;           /* fills overlay horizontally */
+  height: 100%;          /* fills overlay vertically */
+  max-width: 100vw;      /* optional, just to prevent overflow */
+  max-height: 100vh;   
 }
 
 
