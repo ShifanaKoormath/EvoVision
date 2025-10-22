@@ -81,14 +81,7 @@
   overflow: hidden;
 }
 
-/* Overlay content */
-#introOverlay .overlay-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+
 
 
 /* Logo pop with subtle bounce */
